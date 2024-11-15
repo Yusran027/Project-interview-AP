@@ -52,3 +52,8 @@ Setelah itu, buka aplikasi di browser Anda pada `http://localhost:8000`.
 
 ## Screenshot
 ![Gambar Halaman Produk](public/images/Thumbnail.jpg)
+
+
+#  Soal No. 1 Data flow Diagram (DFD) Penjualan Sepatu
+- [View DFD Level 1 on Google Drive](https://drive.google.com/file/d/1Qlz-nHEXEfpUOCaWnxH42D0ZVpbDoqkV/view?usp=sharing)
+
