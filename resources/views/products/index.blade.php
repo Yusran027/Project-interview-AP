@@ -19,8 +19,10 @@
                 <div class="container mt-5">
                     <h1 class="text-center">Kelola Data Penjualan Sepatu</h1>
                     <p class="lead text-center">Tes Interview Main Dealer Anugerah Perdana CRUD menggunakan Laravel, dengan konsep SPA ( Single Page Application ) .</p>
+                    <h5 class="text-center">
+                        <span class="text-danger">*</span>Link GDrive Soal No. 1 DFD:<a href="https://drive.google.com/file/d/1Qlz-nHEXEfpUOCaWnxH42D0ZVpbDoqkV/view?usp=sharing"> DFD sederhana mengenai penjualan Sepatu</a>
+                    </h5>
                     <div class="text-center">
-
                         <a href="{{ route('products.create') }}" class="btn btn-md btn-primary mb-3">Tambah Data</a>
                     </div>
                 </div>
@@ -88,23 +90,23 @@
 
 
     <script>
-    function confirmDelete(productId) {
-        Swal.fire({
-            title: 'Apakah Kamu Yakin?',
-            text: "Anda tidak bisa mengembalikan data setelah dihapus!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Hapus jo!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // If confirmed, submit the form
-                document.getElementById('delete-form-' + productId).submit();
-            }
-        });
-    }
-</script>
+        function confirmDelete(productId) {
+            Swal.fire({
+                title: 'Apakah Kamu Yakin?',
+                text: "Anda tidak bisa mengembalikan data setelah dihapus!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Hapus jo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If confirmed, submit the form
+                    document.getElementById('delete-form-' + productId).submit();
+                }
+            });
+        }
+    </script>
 
     <script>
         // SweetAlert untuk pesan berhasil dan gagal
