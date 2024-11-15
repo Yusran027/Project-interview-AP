@@ -12,8 +12,8 @@
 <body style="background: lightgray">
 
     <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
                         <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">

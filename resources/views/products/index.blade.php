@@ -187,7 +187,7 @@
                 <div class="container my-5 bg-white p-4">
                     <p class="lead text-center">Tes Interview Main Dealer Anugerah Perdana CRUD menggunakan Laravel.</p>
                     <h5 class="text-center">
-                        <span class="text-danger">*</span>Link GDrive Soal No. 1 DFD:<a href="https://drive.google.com/file/d/1Qlz-nHEXEfpUOCaWnxH42D0ZVpbDoqkV/view?usp=sharing"> DFD sederhana mengenai penjualan Sepatu</a>
+                        <span class="text-danger">*</span>Link GDrive Soal No. 1 DFD:<a href="https://drive.google.com/file/d/1iL4k3gWQJi-yiTuRHHp_v7ZKIBdJe8Yq/view?usp=sharing"> DFD sederhana mengenai penjualan Sepatu</a>
                     </h5>
                     <div class="text-center">
                     </div>
