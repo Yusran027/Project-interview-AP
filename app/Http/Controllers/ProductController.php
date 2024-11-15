@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 //import model product
-use App\Models\Product; 
+use App\Models\Product;
 
 //import return type View
 use Illuminate\View\View;
@@ -24,13 +24,15 @@ class ProductController extends Controller
      *
      * @return void
      */
-    public function index() : View
+    public function index(): View
     {
         //get all products
         $products = Product::latest()->paginate(10);
 
         //render view with products
         return view('products.index', compact('products'));
+
+       
     }
 
     /**
@@ -57,6 +59,7 @@ class ProductController extends Controller
             'title'         => 'required|min:5',
             'description'   => 'required|min:10',
             'price'         => 'required|numeric',
+            'size'          => 'required|numeric',
             'stock'         => 'required|numeric'
         ]);
 
@@ -70,13 +73,14 @@ class ProductController extends Controller
             'title'         => $request->title,
             'description'   => $request->description,
             'price'         => $request->price,
+            'size'          => $request->size,
             'stock'         => $request->stock
         ]);
 
         //redirect to index
         return redirect()->route('products.index')->with(['success' => 'Data Berhasil Disimpan!']);
     }
-    
+
     /**
      * show
      *
@@ -91,7 +95,7 @@ class ProductController extends Controller
         //render view with product
         return view('products.show', compact('product'));
     }
-    
+
     /**
      * edit
      *
@@ -106,7 +110,7 @@ class ProductController extends Controller
         //render view with product
         return view('products.edit', compact('product'));
     }
-        
+
     /**
      * update
      *
@@ -122,6 +126,7 @@ class ProductController extends Controller
             'title'         => 'required|min:5',
             'description'   => 'required|min:10',
             'price'         => 'required|numeric',
+            'size'         => 'required|numeric',
             'stock'         => 'required|numeric'
         ]);
 
@@ -132,13 +137,13 @@ class ProductController extends Controller
         if ($request->hasFile('image')) {
 
 
-          
+
             //upload new image
             $image = $request->file('image');
-            $image->storeAs ('public/products', $image->hashName());
+            $image->storeAs('public/products', $image->hashName());
 
             //delete old image
-            Storage::delete('public/products/'.$product->image);
+            Storage::delete('public/products/' . $product->image);
 
             //update product with new image
             $product->update([
@@ -146,9 +151,9 @@ class ProductController extends Controller
                 'title'         => $request->title,
                 'description'   => $request->description,
                 'price'         => $request->price,
+                'size'         => $request->size,
                 'stock'         => $request->stock
             ]);
-
         } else {
 
             //update product without image
@@ -156,6 +161,7 @@ class ProductController extends Controller
                 'title'         => $request->title,
                 'description'   => $request->description,
                 'price'         => $request->price,
+                'size'         => $request->size,
                 'stock'         => $request->stock
             ]);
         }
@@ -163,7 +169,7 @@ class ProductController extends Controller
         //redirect to index
         return redirect()->route('products.index')->with(['success' => 'Data Berhasil Diubah!']);
     }
-    
+
     /**
      * destroy
      *
@@ -176,7 +182,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
 
         //delete image
-        Storage::delete('public/products/'. $product->image);
+        Storage::delete('public/products/' . $product->image);
 
         //delete product
         $product->delete();

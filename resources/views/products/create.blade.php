@@ -72,6 +72,19 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
+                                        <label class="font-weight-bold">Size</label>
+                                        <input type="number" class="form-control @error('size') is-invalid @enderror" name="size" value="{{ old('size') }}" placeholder="Masukkan size Product">
+
+                                        <!-- error message untuk size -->
+                                        @error('size')
+                                        <div class="alert alert-danger mt-2">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
                                         <label class="font-weight-bold">Stok</label>
                                         <input type="number" class="form-control @error('stock') is-invalid @enderror" name="stock" value="{{ old('stock') }}" placeholder="Masukkan Stock Product">
 
