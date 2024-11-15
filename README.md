@@ -51,5 +51,4 @@ Setelah itu, buka aplikasi di browser Anda pada `http://localhost:8000`.
 -   Menampilkan daftar produk sepatu
 
 ## Screenshot
-
 ![Gambar Halaman Produk](public/images/Thumbnail.jpg)
